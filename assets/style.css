@@ -62,18 +62,23 @@ h1, h2, h3, h4, h5, h6, p {
   padding-left: 22px;
 }
 
-.chair{
-  /* Rectangle 531 */
+.background {
   position: absolute;
-  width: 150px;
-  height: 163px;
+  width: 294px;
+  height: 294px;
   left: 123px;
   top: 100px;
-  radius: 8px;
 
   background: #F2E7FE;
-  background-size: 294px 294px 123px 100px;
   border-radius: 8px;
+}
+
+.chair {
+  position:absolute;
+  width: 150px;
+  height: 163px;
+  top:166px;
+  left:195px;
 }
 
 .price{
