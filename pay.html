@@ -2,19 +2,43 @@
 <html lang="en">
 <head>
   <!-- Template Main CSS File -->
-    <link href="assets/style.css" rel="stylesheet">
+    <link href="assets/css/pay.css" rel="stylesheet">
+    <script src="assets/caseware.js"></script>
+    <script src="cleave.min.js"></script>
 </head>
 
 <body class="box">
+
   <div class="title">
     <h1>$ Complete your payment</h1>
   </div>
 
+  <div class="amount">
+    <h1> Amount due</h1>
+    <p> $249.00</p>
+  </div>
 
-  <h1 class="name">Wing Chair <p class="crumbs"> Furniture > Seating</p></h1>
-  <p class="price">$249.00</p>
-  <div class="payment_btn">
-    <p> Proceed to payment </p>
+  <div class="order">
+    <h1> Order Number</h1>
+    <p onload="num">PLACEHOLDER</p>
+  </div>
+
+  <h1 class="card-text">Card Number</h1>
+  <div class="card-number">
+    <!--<input type="number" id="CardNumber" placeholder="#### #### #### ####" maxlength="16"> -->
+    <input class="input-credit-card" placeholder="#### #### #### ####" type="tel">
+  </div>
+
+  <h1 class="cardholder-text"> Cardholder Name</h1>
+  <div class="cardholder">
+    <input type="text" placeholder="Name on the card">
+  </div>
+
+  <h1 class="expire-text">Expiry Date</h1>
+
+  <div class="cvv">
+    <h1 class="cvv-text">CVV</h1>
+    <input type="text" pattern="\d*" maxlength="3">
   </div>
 
 </body>

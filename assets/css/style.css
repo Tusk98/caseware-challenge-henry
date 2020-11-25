@@ -41,7 +41,6 @@ h1, h2, h3, h4, h5, h6, p {
 
 .title h1{
   position: static;
-  width: 129px;
   height: 36px;
   left: 22px;
   top: calc(50% - 36px/2);
