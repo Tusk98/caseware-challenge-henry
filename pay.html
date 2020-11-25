@@ -39,8 +39,7 @@
 <form>
     <h1 class="card-text">Card Number</h1>
     <div class="card-number">
-      <!--<input type="number" id="CardNumber" placeholder="#### #### #### ####" maxlength="16"> -->
-      <input oninput="checkCard()" class="input-credit-card" id="ccnum" placeholder="#### #### #### ####" type="tel">
+      <input oninput="checkCard()" class="input-credit-card" id="ccnum" placeholder="#### #### #### ####" type="tel" maxlength="16">
       <script>
         function checkCard() {
           var num = document.getElementById('ccnum').value;

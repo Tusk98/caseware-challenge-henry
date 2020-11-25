@@ -10,14 +10,14 @@ function offHoverBack(obj) {
 };
 
 
-    <script>
-        var clicked = false;
-        function onHoverBack() {
-        if(!clicked)
-            document.getElementById("back_img").src="assets/images/payment/back_hover.png";
-        }
-        function offHoverBack(obj) {
-          if(!clicked)
-          obj.src="assets/images/payment/back.png";
-        }
-    </script>
+<script>
+    var clicked = false;
+    function onHoverBack() {
+    if(!clicked)
+        document.getElementById("back_img").src="assets/images/payment/back_hover.png";
+    }
+    function offHoverBack(obj) {
+      if(!clicked)
+      obj.src="assets/images/payment/back.png";
+    }
+</script>
