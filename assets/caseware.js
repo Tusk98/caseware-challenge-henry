@@ -1,10 +1,23 @@
-function order_generate() {
-  document.getElementById("num").innerHTML = Math.trunc(Math.random() * 10000000);
-}
+function order_generate(doc) {
+  doc.getElementById("output").innerHTML = Math.trunc(Math.random() * 10000000);
+};
 
-var cleave = new Cleave('.input-credit-card', {
-    creditCard: true,
-    onCreditCardTypeChanged: function (type) {
-        // update UI ...
-    }
-});
+function onHoverBack() {
+  document.getElementById("back_img").src="assets/images/payment/back_hover.png";
+};
+function offHoverBack(obj) {
+  obj.src="assets/images/payment/back.png";
+};
+
+
+    <script>
+        var clicked = false;
+        function onHoverBack() {
+        if(!clicked)
+            document.getElementById("back_img").src="assets/images/payment/back_hover.png";
+        }
+        function offHoverBack(obj) {
+          if(!clicked)
+          obj.src="assets/images/payment/back.png";
+        }
+    </script>

@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <!-- Template Main CSS File -->
-    <link href="assets/css/pay.css" rel="stylesheet">
-    <script src="assets/caseware.js"></script>
-    <script src="cleave.min.js"></script>
+    <link href="assets/css/pay.css" rel="stylesheet"/>
+    <script type="text/assets/javascript" src="caseware.js"></script>
 </head>
 
 <body class="box">
@@ -19,27 +18,125 @@
   </div>
 
   <div class="order">
-    <h1> Order Number</h1>
-    <p onload="num">PLACEHOLDER</p>
+      <h1> Order Number</h1>
+      <p id='output' onload="order_generate(this)"></p>
   </div>
 
-  <h1 class="card-text">Card Number</h1>
-  <div class="card-number">
-    <!--<input type="number" id="CardNumber" placeholder="#### #### #### ####" maxlength="16"> -->
-    <input class="input-credit-card" placeholder="#### #### #### ####" type="tel">
-  </div>
+    <script>
+      window.onload = function(){
+      var ran_num = Math.floor(Math.random() * 10000000) + 1000000;
+      document.getElementById('output').innerHTML = ran_num;
+      };
+    </script>
 
-  <h1 class="cardholder-text"> Cardholder Name</h1>
-  <div class="cardholder">
-    <input type="text" placeholder="Name on the card">
-  </div>
+      <img class="visa" id="visa" class="row-cc" src="assets/images/payment/visa_rest.png">
+      <img class="discover" id="discover" src="assets/images/payment/discover_rest.png">.
+      <img class="ae" id="ae" src="assets/images/payment/ae_rest.png">
+      <img class="master" id="master" src="assets/images/payment/master_rest.png">
 
-  <h1 class="expire-text">Expiry Date</h1>
 
-  <div class="cvv">
-    <h1 class="cvv-text">CVV</h1>
-    <input type="text" pattern="\d*" maxlength="3">
-  </div>
 
+<form>
+    <h1 class="card-text">Card Number</h1>
+    <div class="card-number">
+      <!--<input type="number" id="CardNumber" placeholder="#### #### #### ####" maxlength="16"> -->
+      <input oninput="checkCard()" class="input-credit-card" id="ccnum" placeholder="#### #### #### ####" type="tel">
+      <script>
+        function checkCard() {
+          var num = document.getElementById('ccnum').value;
+          var arr = num.toString().split('');
+          var key = arr[0]
+          if (key == '3') {
+            document.getElementById("ae").src="assets/images/payment/ae_active.png";
+          } else if (key == '4') {
+            document.getElementById("visa").src="assets/images/payment/visa_active.png";
+          } else if (key == '5') {
+            document.getElementById("master").src="assets/images/payment/master_active.png";
+          } else if (key == '6') {
+            document.getElementById("discover").src="assets/images/payment/discover_active.png";
+          } else {
+            document.getElementById("ae").src="assets/images/payment/ae_rest.png";
+            document.getElementById("visa").src="assets/images/payment/visa_rest.png";
+            document.getElementById("master").src="assets/images/payment/master_rest.png";
+            document.getElementById("discover").src="assets/images/payment/discover_rest.png";
+          }
+        }
+      </script>
+
+    </div>
+
+
+    <h1 class="cardholder-text"> Cardholder Name</h1>
+    <div class="cardholder">
+      <input type="text" name="ccname" placeholder="Name on the card">
+    </div>
+
+    <div class="cvv">
+      <h1 >CVV</h1>
+      <input type="text" name="cvv" pattern="\d*" maxlength="3">
+    </div>
+
+    <div class="expire" class="row">
+      <h1> Expiry Date</h1>
+      <select placeholder="MM" name="expmonth" class="column">
+        <option value="" disabled selected>MM</option>
+        <option value="1" placeholder="MM">01 - January</option>
+        <option value="2" placeholder="MM">02 - February</option>
+        <option value="3" placeholder="MM">03 - March</option>
+        <option value="4" placeholder="MM">04 - April</option>
+        <option value="5" placeholder="MM">05 - May</option>
+        <option value="6" placeholder="MM">06 - June</option>
+        <option value="7" placeholder="MM">07 - July </option>
+        <option value="8" placeholder="MM">08 - August</option>
+        <option value="9" placeholder="MM">09 - September</option>
+        <option value="10" placeholder="MM">10 - October</option>
+        <option value="11" placeholder="MM">11 - November</option>
+        <option value="12" placeholder="MM">12 - December</option>
+      </select>
+
+      <select placeholder="YYYY" name="expyear" class="column">
+        <option value="" disabled selected>YYYY</option>
+        <option value="2020">2020</option>
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+        <option value="2023">2023</option>
+        <option value="2024">2024</option>
+        <option value="2025">2025</option>
+        <option value="2026">2026</option>
+      </select>
+    </div>
+
+    <a class="back" href="index.html">
+      <img id="back_img" src="assets\images\payment\back.png" onmouseover="onHoverBack()" onMouseout="offHoverBack(this)"/>
+    </a>
+
+    <script>
+        var clicked = false;
+        function onHoverBack() {
+        if(!clicked)
+            document.getElementById("back_img").src="assets/images/payment/back_hover.png";
+        }
+        function offHoverBack(obj) {
+          if(!clicked)
+          obj.src="assets/images/payment/back.png";
+        }
+    </script>
+
+    <input type="image" class="submit" id="sub_img" onmouseover="onHoverSub()"
+        onmouseout="offSub(this)" src="assets\images\payment\submit.png"
+        alt="submit" value="Submit" />
+
+    <script>
+        var clicked = false;
+        function onHoverSub() {
+        if(!clicked)
+            document.getElementById("sub_img").src="assets/images/payment/submit_hover.png";
+        }
+        function offSub(obj) {
+          if(!clicked)
+          obj.src="assets/images/payment/submit.png";
+        }
+    </script>
+</form>
 </body>
 </html>

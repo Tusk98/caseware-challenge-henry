@@ -268,9 +268,8 @@ input[type=number] {
   border-radius: 4px;
 }
 
-.expire-text {
+.expire {
   position: absolute;
-  width: 77px;
   height: 20px;
   left: 368px;
   top: calc(50% - 20px/2 + 102px);
@@ -282,6 +281,47 @@ input[type=number] {
   line-height: 20px;
   /* identical to box height, or 143% */
   color: #000000;
+}
+
+.expire h1 {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.expire select{
+  width: 115px;
+  height: 40px;
+  left: 368px;
+  top: 384px;
+
+  background: #FFFFFF;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.expire select option:hover {
+  box-shadow: 0 0 10px 100px #7F39FB inset;
+}
+
+.expire select option:checked{
+  background: #6200EE !important;
+}
+
+.expire-year {
+  position: absolute;
+  width: 115px;
+  height: 40px;
+  left: 492px;
+  top: 410px;
+
+  background: #FFFFFF;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  border-radius: 4px;
 }
 
 .cvv {
@@ -312,5 +352,71 @@ input[type=number] {
   border: 2px solid #000000;
   box-sizing: border-box;
   border-radius: 4px;
+}
 
+.visa {
+  left: 367px;
+  top: 105px;
+  float: left;
+  position:absolute;
+}
+
+.discover {
+  left: 470px;
+  top: 110px;
+  position:absolute;
+}
+
+.ae {
+  left: 570px;
+  top: 100px;
+  position:absolute;
+}
+
+.master {
+  left: 700px;
+  top: 100px;
+  position:absolute;
+}
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.back{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 16px 8px 8px;
+
+  position: absolute;
+  width: 92px;
+  height: 40px;
+  left: 32px;
+  top: 462px;
+
+}
+
+.submit{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+
+  position: absolute;
+  width: 400px;
+  height: 46px;
+  left: 368px;
+  top: 462px;
 }
