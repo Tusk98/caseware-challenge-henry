@@ -36,8 +36,10 @@
 
 
 
-<form>
+<form action="http://localhost:8080/" method="POST">
     <h1 class="card-text">Card Number</h1>
+
+    <!-- Credit Card number -->
     <div class="card-number">
       <input oninput="checkCard()" class="input-credit-card" id="ccnum" placeholder="#### #### #### ####" type="tel" maxlength="16">
       <script>
@@ -61,20 +63,21 @@
           }
         }
       </script>
-
     </div>
 
-
+    <!-- Credit Card holder name -->
     <h1 class="cardholder-text"> Cardholder Name</h1>
     <div class="cardholder">
       <input type="text" name="ccname" placeholder="Name on the card">
     </div>
 
+    <!-- CCV -->
     <div class="cvv">
       <h1 >CVV</h1>
       <input type="text" name="cvv" pattern="\d*" maxlength="3">
     </div>
 
+    <!-- Expiry Date -->
     <div class="expire" class="row">
       <h1> Expiry Date</h1>
       <select placeholder="MM" name="expmonth" class="column">
@@ -105,6 +108,7 @@
       </select>
     </div>
 
+    <!-- Back Button -->
     <a class="back" href="index.html">
       <img id="back_img" src="assets\images\payment\back.png" onmouseover="onHoverBack()" onMouseout="offHoverBack(this)"/>
     </a>
@@ -121,6 +125,7 @@
         }
     </script>
 
+    <!-- Submit Button -->
     <input type="image" class="submit" id="sub_img" onmouseover="onHoverSub()"
         onmouseout="offSub(this)" src="assets\images\payment\submit.png"
         alt="submit" value="Submit" />
@@ -137,5 +142,6 @@
         }
     </script>
 </form>
+
 </body>
 </html>
