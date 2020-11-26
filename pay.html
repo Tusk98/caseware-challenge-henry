@@ -36,12 +36,13 @@
 
 
 
-<form action="http://localhost:8080/" method="POST">
+<form action="http://localhost:1234/" method="GET">
     <h1 class="card-text">Card Number</h1>
 
     <!-- Credit Card number -->
     <div class="card-number">
-      <input oninput="checkCard()" class="input-credit-card" id="ccnum" placeholder="#### #### #### ####" type="tel" maxlength="16">
+      <input oninput="checkCard()" class="input-credit-card" name= "ccnum" id="ccnum"
+      placeholder="#### #### #### ####" type="tel" maxlength="16">
       <script>
         function checkCard() {
           var num = document.getElementById('ccnum').value;
