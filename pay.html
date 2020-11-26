@@ -42,7 +42,7 @@
     <!-- Credit Card number -->
     <div class="card-number">
       <input oninput="checkCard()" class="input-credit-card" name= "ccnum" id="ccnum"
-      placeholder="#### #### #### ####" type="tel" maxlength="16">
+      placeholder="#### #### #### ####" type="tel" maxlength="16" required>
       <script>
         function checkCard() {
           var num = document.getElementById('ccnum').value;
@@ -69,19 +69,19 @@
     <!-- Credit Card holder name -->
     <h1 class="cardholder-text"> Cardholder Name</h1>
     <div class="cardholder">
-      <input type="text" name="ccname" placeholder="Name on the card">
+      <input type="text" name="ccname" placeholder="Name on the card" required>
     </div>
 
     <!-- CCV -->
     <div class="cvv">
       <h1 >CVV</h1>
-      <input type="text" name="cvv" pattern="\d*" maxlength="3">
+      <input type="text" name="cvv" pattern="\d*" maxlength="3" required>
     </div>
 
     <!-- Expiry Date -->
     <div class="expire" class="row">
       <h1> Expiry Date</h1>
-      <select placeholder="MM" name="expmonth" class="column">
+      <select placeholder="MM" name="expmonth" class="column" required>
         <option value="" disabled selected>MM</option>
         <option value="1" placeholder="MM">01 - January</option>
         <option value="2" placeholder="MM">02 - February</option>
@@ -97,7 +97,7 @@
         <option value="12" placeholder="MM">12 - December</option>
       </select>
 
-      <select placeholder="YYYY" name="expyear" class="column">
+      <select placeholder="YYYY" name="expyear" class="column" required>
         <option value="" disabled selected>YYYY</option>
         <option value="2020">2020</option>
         <option value="2021">2021</option>
