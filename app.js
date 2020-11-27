@@ -4,6 +4,7 @@ const StringDecoder = require("string_decoder").StringDecoder;
 const util = require("util");
 const fs = require('fs')
 
+
 var port = process.env.PORT || 1234;
 
 const server = http.createServer(function(req, res) {
@@ -15,7 +16,7 @@ const server = http.createServer(function(req, res) {
     res.writeHead(200, "OK");
     res.end("Payment successful");
     //fs.createReadStream('success.html').pipe(res)
-    
+
   } else {
     res.writeHead(400, "not ok");
     res.end("Payment unsuccessful");
