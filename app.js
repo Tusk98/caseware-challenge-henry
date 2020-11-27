@@ -2,6 +2,7 @@ const http = require("http");
 const url = require("url");
 const StringDecoder = require("string_decoder").StringDecoder;
 const util = require("util");
+const fs = require('fs')
 
 var port = process.env.PORT || 1234;
 
@@ -12,12 +13,12 @@ const server = http.createServer(function(req, res) {
 
   if ( valid_cc == 1) {
     res.writeHead(200, "OK");
-    res.end('Success');
-
+    res.end("Payment successful");
+    //fs.createReadStream('success.html').pipe(res)
+    
   } else {
     res.writeHead(400, "not ok");
-    res.write(util.inspect(path.query) + "\n\n");
-    res.end('End of msg to browser');
+    res.end("Payment unsuccessful");
   }
 });
 
